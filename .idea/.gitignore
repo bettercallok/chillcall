@@ -1,0 +1,25 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+target/
+.mvn/
+mvnw
+mvn.cmd
+
+
+idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+.DS_Store
+Thumbs.db
+
+*.logs
+
+.env
+
