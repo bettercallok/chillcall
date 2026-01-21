@@ -111,7 +111,7 @@ public class SignalingHandler extends TextWebSocketHandler {
 
     private void handleJoinRoom(WebSocketSession session, JsonNode message) throws IOException {
         String roomId = message.get("roomId").asText();
-        String userId = message.has("userID") ? message.get("userID").asText()
+        String userId = message.has("userId") ? message.get("userId").asText()
                 : "User-" + session.getId().substring(0, 8);
         Room room = rooms.get(roomId);
         if (room == null) {
