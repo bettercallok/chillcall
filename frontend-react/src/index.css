@@ -1,0 +1,172 @@
+/* IMPORT: Space Mono for that Retro/Manual look */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles from original ChillCall */
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: #F0F0F0;
+  color: #1a1a1a;
+  overflow: hidden;
+}
+
+* {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Force white background on pixel elements to prevent transparency issues */
+.pixel-cloud,
+.video-card,
+.pixel-btn,
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.brutal-shadow {
+  box-shadow: 6px 6px 0px 0px #000000;
+  border: 2px solid #000000;
+}
+
+.brutal-shadow:active {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(#e5e5e5 1px, transparent 1px),
+    linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center center;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.pixel-cloud {
+  background: white;
+  border: 2px solid black;
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.pixel-cloud::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 20px;
+  width: 40px;
+  height: 6px;
+  background: black;
+}
+
+.pixel-cloud::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 20px;
+  width: 40px;
+  height: 6px;
+  background: black;
+}
+
+.pixel-btn {
+  border: 2px solid black;
+  background: white;
+  transition: all 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pixel-btn:hover {
+  background: #000 !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 black;
+}
+
+.pixel-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 0 0 black;
+}
+
+/* Media buttons specific overrides */
+.btn-spotify:hover {
+  background-color: #1DB954 !important;
+  border-color: #1DB954;
+  color: white !important;
+}
+
+.btn-youtube:hover {
+  background-color: #FF0000 !important;
+  border-color: #FF0000;
+  color: white !important;
+}
+
+.btn-apple:hover {
+  background-color: #FC3C44 !important;
+  border-color: #FC3C44;
+  color: white !important;
+}
+
+.btn-game:hover {
+  background-color: #8B5CF6 !important;
+  border-color: #8B5CF6;
+  color: white !important;
+}
+
+.hidden-screen {
+  display: none !important;
+}
+
+.flex-screen {
+  display: flex !important;
+}
+
+.central-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: none;
+}
+
+.central-overlay.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border: 1px solid #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+/* Video Card Styles */
+.video-card {
+  position: relative;
+  border: 2px solid black;
+  overflow: hidden;
+  background: white;
+  box-shadow: 4px 4px 0px black;
+}
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
