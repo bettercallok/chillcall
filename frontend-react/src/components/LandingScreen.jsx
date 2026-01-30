@@ -12,7 +12,8 @@ export function LandingScreen({ onConnected }) {
 
     const handleConnect = () => {
         setIsConnecting(true);
-        const ws = new WebSocket('ws://localhost:8080/signaling');
+        const wsUrl = import.meta.env.VITE_WEBSOCKET_URL || 'ws://localhost:8080/signaling';
+        const ws = new WebSocket(wsUrl);
         socketRef.current = ws;
 
         ws.onopen = () => {
