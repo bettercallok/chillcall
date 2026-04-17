@@ -22,16 +22,16 @@ A peer-to-peer video calling application with real-time WebRTC communication, bu
 - **Architecture**: Context API for global state management
 - **Communication**: WebRTC (Mesh topology) + Socket.IO (Signaling)
 
-### Backend (Java)
-- **Runtime**: Java 17+
-- **Framework**: Spring Boot 3.2
+### Backend (Python)
+- **Runtime**: Python 3.12+
+- **Framework**: Django 6.0 + Channels
 - **Protocol**: WebSocket (Raw) for signaling
 
 ## Getting Started
 
 ### Prerequisites
 - Node.js 18+ & npm
-- Java 17+ & Maven
+- Python 3.12+ & pip
 
 ### 1. Running the Backend (Signaling Server)
 
@@ -39,7 +39,8 @@ The backend handles the initial handshake (Signaling) to establish P2P connectio
 
 ```bash
 cd backend
-mvn spring-boot:run
+pip install -r requirements.txt
+daphne -p 8080 core.asgi:application
 ```
 *Server starts on `ws://localhost:8080/signaling`*
 
@@ -79,12 +80,13 @@ chillcall/
 │   │   ├── context/        # CallContext (WebRTC/Socket Logic)
 │   │   └── hooks/          # Custom Hooks
 │   └── public/
-└── backend/                # Spring Boot Application
-    └── src/main/java/      # Signaling Handler & Socket Config
+└── backend/                # Django Application
+    ├── core/               # Django Settings & ASGI config
+    └── signaling/          # Channels WebSocket Consumers
 ```
 
 ## Architecture
 
-1.  **Signaling**: Spring Boot acts as a lightweight broker to exchange SDP offers/answers.
+1.  **Signaling**: Django Channels acts as a lightweight broker to exchange SDP offers/answers.
 2.  **P2P Mesh**: Once connected, all video, audio, chat, and game data flows directly between peers via `RTCPeerConnection`.
 3.  **State Sync**: `AppScreen.jsx` and `CallContext` handle synchronization of UI states (Game open/close, Media URL) across the mesh.
