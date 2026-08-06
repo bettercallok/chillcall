@@ -4,5 +4,5 @@ def health_check(request):
     return JsonResponse({
         "status": "UP",
         "service": "ChillCall Signaling Server",
-        "version": "1.0.0"
+        "version": "2.0.0"
     })
