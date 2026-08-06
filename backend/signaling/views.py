@@ -3,5 +3,6 @@ from django.http import JsonResponse
 def health_check(request):
     return JsonResponse({
         "status": "UP",
-        "service": "ChillCall Signaling Server"
+        "service": "ChillCall Signaling Server",
+        "version": "1.0.0"
     })
