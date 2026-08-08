@@ -90,3 +90,6 @@ chillcall/
 1.  **Signaling**: Django Channels acts as a lightweight broker to exchange SDP offers/answers.
 2.  **P2P Mesh**: Once connected, all video, audio, chat, and game data flows directly between peers via `RTCPeerConnection`.
 3.  **State Sync**: `AppScreen.jsx` and `CallContext` handle synchronization of UI states (Game open/close, Media URL) across the mesh.
+
+## GitOracle Test
+This repo is autonomously managed.
