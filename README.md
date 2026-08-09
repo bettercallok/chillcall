@@ -2,6 +2,8 @@
 
 A peer-to-peer video calling application with real-time WebRTC communication, built-in chat, games, and media sharing.
 
+## License
+This project is licensed under the MIT License.
 ## Features
 
 - **Video Calls**: Multi-user video conferencing (up to 4 participants)
