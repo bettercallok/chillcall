@@ -17,7 +17,7 @@ function AppContent() {
   const [isConnected, setIsConnected] = useState(false);
 
   const handleConnected = (msg) => {
-    console.log('Connected to room:', msg.roomId);
+    console.log('[Signaling] Connected to room:', msg.roomId);
     setIsConnected(true);
   };
 
