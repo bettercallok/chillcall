@@ -8,9 +8,11 @@ public class UserService {
     }
 
     public void processPayment(User user, PaymentInfo payment) {
-        // BUG: user can be null if fetched from DB incorrectly
         if (user == null) {
             throw new IllegalArgumentException("user must not be null");
+        }
+        if (payment == null) {
+            throw new IllegalArgumentException("payment must not be null");
         }
         String userId = user.getId();
         paymentGateway.charge(userId, payment.getAmount());
