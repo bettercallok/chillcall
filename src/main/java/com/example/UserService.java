@@ -8,6 +8,7 @@ public class UserService {
     }
 
     public void processPayment(User user, PaymentInfo payment) {
+        if (user == null) throw new IllegalArgumentException("User must not be null");
         String userId = user.getId();
         paymentGateway.charge(userId, payment.getAmount());
     }
