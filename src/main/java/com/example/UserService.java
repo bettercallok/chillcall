@@ -8,7 +8,6 @@ public class UserService {
     }
 
     public void processPayment(User user, PaymentInfo payment) {
-    // Ensure user is not null before proceeding
         if (user == null) {
             throw new IllegalArgumentException("User cannot be null");
         }
