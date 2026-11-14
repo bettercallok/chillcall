@@ -9,6 +9,6 @@ public class RateLimiter {
 
     /** True if one more request is allowed after {@code requestsSoFar}. */
     public boolean allow(int requestsSoFar) {
-        return requestsSoFar <= limit;
+        return requestsSoFar < limit;
     }
 }
