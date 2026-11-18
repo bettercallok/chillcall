@@ -9,6 +9,6 @@ public class Stats {
         for (int v : values) {
             sum += v;
         }
-        return sum / values.length;
+        return (double) sum / values.length;
     }
 }
