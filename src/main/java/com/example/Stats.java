@@ -1,3 +1,4 @@
+// This class provides statistical utility methods for data analysis operations
 package com.example;
 
 public class Stats {
