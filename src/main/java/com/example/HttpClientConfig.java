@@ -1,7 +1,7 @@
 package com.example;
 
 public class HttpClientConfig {
-    public static final int DEFAULT_TIMEOUT_SECONDS = 0;
+    public static final int DEFAULT_TIMEOUT_SECONDS = 30;
 
     private final int timeoutSeconds;
 
